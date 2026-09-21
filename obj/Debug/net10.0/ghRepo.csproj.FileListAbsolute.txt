@@ -95,4 +95,3 @@ C:\DemoClass\GH-900\ghRepo\obj\Debug\net10.0\refint\ghRepo.dll
 C:\DemoClass\GH-900\ghRepo\obj\Debug\net10.0\ghRepo.pdb
 C:\DemoClass\GH-900\ghRepo\obj\Debug\net10.0\ghRepo.genruntimeconfig.cache
 C:\DemoClass\GH-900\ghRepo\obj\Debug\net10.0\ref\ghRepo.dll
-C:\DemoClass\GH-900\ghRepo\bin\Debug\net10.0\ghRepo.exe

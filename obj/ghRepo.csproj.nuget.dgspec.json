@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\DemoClass\\GH-900\\ghRepo\\ghRepo.csproj": {}
+    "c:\\DemoClass\\GH-900\\ghRepo\\ghRepo.csproj": {}
   },
   "projects": {
-    "C:\\DemoClass\\GH-900\\ghRepo\\ghRepo.csproj": {
+    "c:\\DemoClass\\GH-900\\ghRepo\\ghRepo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DemoClass\\GH-900\\ghRepo\\ghRepo.csproj",
+        "projectUniqueName": "c:\\DemoClass\\GH-900\\ghRepo\\ghRepo.csproj",
         "projectName": "ghRepo",
-        "projectPath": "C:\\DemoClass\\GH-900\\ghRepo\\ghRepo.csproj",
+        "projectPath": "c:\\DemoClass\\GH-900\\ghRepo\\ghRepo.csproj",
         "packagesPath": "C:\\Users\\anagillara\\.nuget\\packages\\",
-        "outputPath": "C:\\DemoClass\\GH-900\\ghRepo\\obj\\",
+        "outputPath": "c:\\DemoClass\\GH-900\\ghRepo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anagillara\\AppData\\Roaming\\NuGet\\NuGet.Config"

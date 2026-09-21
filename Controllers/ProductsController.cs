@@ -20,6 +20,24 @@ public class ProductsController : Controller
         return View(BuildViewModel());
     }
 
+    public static Product SearchById(int id)
+    {
+        lock (SyncLock)
+        {
+            return Products.FirstOrDefault(p => p.Id == id);
+        }
+    }
+
+    public static List<Product> SearchByCategory(string category)
+    {
+        lock (SyncLock)
+        {
+            return Products
+                .Where(p => p.Category.Equals(category, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+    }
+
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Create(ProductAdminViewModel model)
