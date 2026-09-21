@@ -1,0 +1,126 @@
+@model ProductAdminViewModel
+@{
+    ViewData["Title"] = "Administrar productos";
+}
+
+<div class="row g-4">
+    <div class="col-lg-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h2 class="h4 mb-3">Nuevo producto</h2>
+
+                <form asp-action="Create" method="post" novalidate>
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-2"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="NewProduct.Sku" class="form-label">SKU</label>
+                        <input asp-for="NewProduct.Sku" class="form-control" />
+                        <span asp-validation-for="NewProduct.Sku" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="NewProduct.Name" class="form-label">Nombre</label>
+                        <input asp-for="NewProduct.Name" class="form-control" />
+                        <span asp-validation-for="NewProduct.Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="NewProduct.Category" class="form-label">Categoría</label>
+                        <input asp-for="NewProduct.Category" class="form-control" />
+                        <span asp-validation-for="NewProduct.Category" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="NewProduct.Price" class="form-label">Precio</label>
+                        <input asp-for="NewProduct.Price" class="form-control" step="0.01" />
+                        <span asp-validation-for="NewProduct.Price" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="NewProduct.Stock" class="form-label">Stock</label>
+                        <input asp-for="NewProduct.Stock" class="form-control" />
+                        <span asp-validation-for="NewProduct.Stock" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-check mb-3">
+                        <input asp-for="NewProduct.IsActive" class="form-check-input" />
+                        <label asp-for="NewProduct.IsActive" class="form-check-label">Activo</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Guardar producto</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-8">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="h3 mb-0">Administración de productos</h1>
+            <span class="badge text-bg-secondary">@Model.Products.Count productos</span>
+        </div>
+
+        @if (TempData["SuccessMessage"] is string message)
+        {
+            <div class="alert alert-success" role="alert">@message</div>
+        }
+
+        <div class="card shadow-sm border-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>SKU</th>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th class="text-end">Precio</th>
+                            <th class="text-end">Stock</th>
+                            <th>Estado</th>
+                            <th class="text-end">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Products.Count == 0)
+                        {
+                            <tr>
+                                <td colspan="7" class="text-center py-4 text-muted">No hay productos registrados.</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            @foreach (var product in Model.Products)
+                            {
+                                <tr>
+                                    <td>@product.Sku</td>
+                                    <td>@product.Name</td>
+                                    <td>@product.Category</td>
+                                    <td class="text-end">@product.Price.ToString("C")</td>
+                                    <td class="text-end">@product.Stock</td>
+                                    <td>
+                                        @if (product.IsActive)
+                                        {
+                                            <span class="badge text-bg-success">Activo</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge text-bg-secondary">Inactivo</span>
+                                        }
+                                    </td>
+                                    <td class="text-end">
+                                        <form asp-action="Delete" method="post" class="d-inline">
+                                            <input type="hidden" name="id" value="@product.Id" />
+                                            <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
