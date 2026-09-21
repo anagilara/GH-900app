@@ -2,7 +2,6 @@ using ghRepo.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ghRepo.Controllers;
-
 public class ProductsController : Controller
 {
     private static readonly object SyncLock = new();
