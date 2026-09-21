@@ -1,15 +1,12 @@
-@using Microsoft.AspNetCore.Html
-@{
-    ViewData["Title"] = "Home Page v2";
-    // En ASP.NET Core
-    var q = Context.Request.Query["q"].ToString(); // source no confiable
-    IHtmlContent raw = new HtmlString(q);          // creación de HTML sin encoding
-}
-<h2>Resultados</h2>
-@raw
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta charset="UTF-8">
+    <title>Hello World</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+
     <script src="https://gist.github.com/anagilara/cf336104538e25d4a2287ca1f58bab04.js"></script>
-</div>
+</body>
+</html>
