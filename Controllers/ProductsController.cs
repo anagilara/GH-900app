@@ -1,5 +1,6 @@
 using ghRepo.Models;
 using Microsoft.AspNetCore.Mvc;
+//test rebase and merge 1
 
 namespace ghRepo.Controllers;
 public class ProductsController : Controller
