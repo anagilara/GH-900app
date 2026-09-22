@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 //test squash and merge 1
 //test squash and merge 2
 //test merge 1
+//test merge 2
 namespace ghRepo.Controllers;
 public class ProductsController : Controller
 {
